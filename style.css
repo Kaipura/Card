@@ -1,0 +1,139 @@
+body {
+    background-color: #ffe0f0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.envelope {
+    width: 30vmin; /* Responsive width */
+    height: 20vmin; /* Responsive height */
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.envelope-top {
+    width: 100%;
+    height: 50%;
+    background-color: #ffda44;
+    position: absolute;
+    top: 0;
+    transform-origin: bottom;
+    transition: transform 0.5s ease-out;
+}
+
+.envelope-bottom {
+    width: 100%;
+    height: 50%;
+    background-color: #ffcc00;
+}
+
+.card-content {
+    display: none;
+    margin-top: 20px;
+    font-size: 2.5vmin; /* Responsive font size */
+    color: #333;
+    background-color: #fff;
+    padding: 2vmin; /* Responsive padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.balloon-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.balloon {
+    width: 8vmin; /* Responsive width */
+    height: 12vmin; /* Responsive height */
+    background-color: #ff66b3;
+    border-radius: 50% 50% 50% 50% / 60% 60% 100% 100%;
+    position: absolute;
+    bottom: -10%;
+    opacity: 0.8;
+    animation: floatUp 6s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.confetti-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.confetti-piece {
+    width: 1vmin; /* Responsive width */
+    height: 1vmin; /* Responsive height */
+    background-color: #ff66b3;
+    position: absolute;
+    top: -10px;
+    animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100vh) rotate(0); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Cat GIF styling */
+.cat-gif {
+    width: 20vmin; /* Responsive size */
+    margin: 2vmin 0; /* Responsive margin */
+    animation: bounce 2s infinite;
+}
+
+.girlfriend-pic {
+    width: 25%; /* Set the desired width */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Adds rounded corners */
+    margin: 20px 0; /* Adds margin around the image */
+}
+
+/* Click Here styling */
+.click-here {
+    position: absolute;
+    top: 250px;
+    background-color: #ff69b4;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+}
